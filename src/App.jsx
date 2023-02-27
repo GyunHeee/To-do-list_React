@@ -3,33 +3,23 @@ import { BsSunFill } from 'react-icons/bs';
 import Item from './components/Item';
 import Createitem from './components/Createitem';
 import TodoList from './components/TodoList/TodoList';
+import Header from './components/Header/Header';
+import { useState } from 'react';
+
+const filters = ['all', 'active', 'completed'];
 
 function App() {
+  const [filter, setFilter] = useState(filters[0]);
   return (
     <div>
-      <TodoList />
+      <Header
+        filters={filters}
+        filter={filter}
+        onFilterChange={(filter) => setFilter(filter)}
+      />
+      <TodoList filter={filter} />
     </div>
   );
-  // return (
-  //   <div className="list">
-  //     <header>
-  //       <button className="header__sun">
-  //         <BsSunFill />
-  //       </button>
-  //       <div className="header__list">
-  //         <button className="header__list__item">All</button>
-  //         <button className="header__list__item">Active</button>
-  //         <button className="header__list__item">Completed</button>
-  //       </div>
-  //     </header>
-  //     <section className="items">
-  //       <Item />
-  //     </section>
-  //     <footer>
-  //       <input type="text" onSubmit={Createitem} />
-  //       <button className="button__add">Add</button>
-  //     </footer>
-  //   </div>
 }
 
 export default App;
