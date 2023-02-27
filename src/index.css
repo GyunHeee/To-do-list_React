@@ -4,6 +4,15 @@
   --color-grey: #d1d1d1;
   --color-text: #22243b;
   --color-accent: #f16e03;
+  --color-scrollbar: #aaa7a7;
+}
+
+/* 변수값만 재정의하면 업데이트 된다. */
+html.dark {
+  --color-bg-dark: #1a1c35;
+  --color-gb: #22243b;
+  --color-grey: #4e4e4e;
+  --color-text: #fdfffd;
 }
 
 body {
@@ -26,6 +35,9 @@ body {
     rgba(85, 85, 172, 1) 35%,
     rgba(71, 198, 223, 1) 100%
   );
+  font-size: 1.2rem;
+  /* 브라우저에서 accent 컬러를 사용하여 UI input을 나타냄 */
+  accent-color: var(--color-accent);
 }
 
 #root {
@@ -47,6 +59,10 @@ code {
     monospace;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
@@ -55,4 +71,20 @@ ul {
 button {
   outline: none;
   border: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--co);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-accent);
 }
