@@ -19,6 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://gyunheee.github.io/To-do-list_React/",
   "eslintConfig": {
     "extends": [
       "react-app",
